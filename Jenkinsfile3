@@ -1,0 +1,29 @@
+pipeline{
+ agent any
+    stages{
+       stage("build"){
+             steps{
+                echo 'build stage'
+          }
+    }
+    stage("test"){
+             steps{
+             		echo 'Test stage'
+                  }
+        }
+
+    stage("deploy"){
+             steps{
+             	echo 'Deploy'
+              sh 'python3 hello.py'
+           }
+    }
+
+    }
+    post{
+    post {
+        always {
+            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
+        }
+    }
+}
