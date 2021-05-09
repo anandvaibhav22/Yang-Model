@@ -14,6 +14,9 @@ pipeline{
 
     stage("deploy"){
              steps{
+              when {
+              branch 'master'
+              }
              	echo 'Deploy'
               sh 'python3 hello.py'
            }
