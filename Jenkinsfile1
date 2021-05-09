@@ -20,5 +20,9 @@ pipeline{
     }
 
     }
-
+    post{
+    success{
+          echo 'Whole pipeline is successsful'
+    }
+    }
 }
