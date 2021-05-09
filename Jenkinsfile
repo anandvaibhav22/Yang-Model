@@ -16,6 +16,7 @@ pipeline{
     stage("deploy"){
              steps{
              	echo 'Deploy'
+              sh 'hello.py'
            }
     }
 
