@@ -20,7 +20,7 @@ def main():
     input_var1 = sys.argv[2]
     input_var2 = sys.argv[3]
     print(add(input_var,input_var1))
-    print(printingvalues(input_var2))
+    printingvalues(input_var2)
 
 if __name__ == '__main__':
     main()
