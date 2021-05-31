@@ -1,9 +1,5 @@
 pipeline{
  agent any
-  parameters {
-  string(name: 'a', defaultValue: '2', description: 'a value')
-  string(name: 'b', defaultValue: '3', description: 'b value')
-  }
     stages{
        stage("build"){
              steps{
@@ -19,14 +15,10 @@ pipeline{
     stage("deploy"){
              steps{
              	echo 'Deploy'
-              sh 'python3 hello.py ${params.a} ${params.b}'
+              sh 'python3 hello.py ${a} ${b}'
            }
     }
 
     }
-    post {
-        always {
-            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
-        }
-    }
+   
 }
