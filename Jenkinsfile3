@@ -1,8 +1,8 @@
 pipeline{
  agent any
  parameters {
-        string(name: 'a', description: 'How should I greet the world?')
-        string(name: 'b', description: 'How should I greet the world?')
+        string(name: 'a',defaultValue: 2,description: 'How should I greet the world?')
+        string(name: 'b',defaultValue: 2, description: 'How should I greet the world?')
     }
     stages{
        stage("build"){
