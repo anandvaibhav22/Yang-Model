@@ -1,13 +1,14 @@
 pipeline{
  agent any
  parameters {
-        string(name: 'a',defaultValue: '2',description: 'How should I greet the world?')
-        string(name: 'b',defaultValue: '2', description: 'How should I greet the world?')
+        string(name: 'a',defaultValue: '2',description: 'value of a'?')
+        string(name: 'b',defaultValue: '2', description: 'value of b')
+        choice(name: 'CHOICES', choices: ['one', 'two', 'three'], description: 'testing choice paramater')
     }
     stages{
        stage("build"){
              steps{
-                echo 'build stage ${params.a}'
+                echo 'build stage'
           }
     }
     stage("test"){
@@ -19,7 +20,7 @@ pipeline{
     stage("deploy"){
              steps{
              	echo 'Deploy'
-              sh 'python3 hello.py ${a} ${b}'
+              sh 'python3 hello.py ${a} ${b} ${CHOICES}'
            }
     }
 
