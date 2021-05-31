@@ -13,7 +13,7 @@ def add (a,b):
     return int(a)+int(b)
 
 def printingvalues(value):
-	print f'value is {value}'
+	print (f'value is {value}')
 	
 def main():
     input_var = sys.argv[1]
