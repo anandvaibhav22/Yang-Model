@@ -1,7 +1,7 @@
 pipeline{
  agent any
  parameters {
-        string(name: 'a',defaultValue: '2',description: 'value of a'?')
+        string(name: 'a',defaultValue: '2',description: 'value of a')
         string(name: 'b',defaultValue: '2', description: 'value of b')
         choice(name: 'CHOICES', choices: ['one', 'two', 'three'], description: 'testing choice paramater')
     }
