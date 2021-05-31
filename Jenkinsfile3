@@ -7,7 +7,7 @@ pipeline{
     stages{
        stage("build"){
              steps{
-                echo 'build stage {params.a}'
+                echo 'build stage ${params.a}'
           }
     }
     stage("test"){
